@@ -11,11 +11,13 @@ used in the KM hotkey. For example:
 ./resize left
 ./resize up
 ./resize enter
+./resize rightwards
 ```
 
 # TODO
 
-- [ ] If the window is half-screen-size and the orthogonal key is pressed, make it quarter-size
+- [x] If the window is half-screen-size and the orthogonal key is pressed, make it quarter-size
+- [x] +Shift key to shift up/down/l/r but retain size
 - [ ] Move onto other desktops if at the edge of the screen and there is another desktop in that
       direction
 - [ ] If the desktop is portrait, lateral movements are full width
