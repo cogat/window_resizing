@@ -136,19 +136,31 @@ class Box:
     def shift(self, direction):
         if direction == UPWARDS:
             new_box = Box(
-                x=self.x, y=self.y - self.height, width=self.width, height=self.height
+                x=self.x,
+                y=max(self.y - self.height, 0),
+                width=self.width,
+                height=self.height,
             )
         elif direction == DOWNWARDS:
             new_box = Box(
-                x=self.x, y=self.y + self.height, width=self.width, height=self.height
+                x=self.x,
+                y=min(self.y + self.height, self.desktop.bottom - self.height),
+                width=self.width,
+                height=self.height,
             )
         elif direction == LEFTWARDS:
             new_box = Box(
-                x=self.x - self.width, y=self.y, width=self.width, height=self.height
+                x=max(self.x - self.width, 0),
+                y=self.y,
+                width=self.width,
+                height=self.height,
             )
         elif direction == RIGHTWARDS:
             new_box = Box(
-                x=self.x + self.width, y=self.y, width=self.width, height=self.height
+                x=min(self.x + self.width, self.desktop.right - self.width),
+                y=self.y,
+                width=self.width,
+                height=self.height,
             )
         new_box.apply_to_front_window()
 
